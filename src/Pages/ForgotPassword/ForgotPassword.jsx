@@ -1,0 +1,62 @@
+import React from "react";
+import { FaBeer, FaFacebook, FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+const ForgotPassword = () => {
+
+    return (
+        <div >
+            <section className="text-[#FEF9FA] body-font relative text-base">
+                <div className="container px-5 py-10  mx-auto border-2xl ">
+                    <div className="lg:w-1/2 md:w-2/3 mx-auto ">
+                        <div className=" border-[1px] border-[#a15999] px-10 py-10 rounded-md">
+                            <h1 className="text-center  text-base font-medium title-font mb-8  text-[#a15999]">
+
+                                Forgot your password?
+                            </h1>
+                            <div className="flex flex-wrap ">
+                                <div className="p-2 w-full">
+                                    <div className="relative">
+                                        <label
+                                            for="email"
+                                            className="leading-7 text-sm text-[#a15999]"
+                                        >
+                                            Email
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="Phone"
+                                            required
+                                            placeholder="Enter your Email"
+                                            name="Phone"
+                                            className="w-full bg-white rounded border border-[#a15999] focus:border-[#a15999]  outline-none text-[#a15999] py-1 px-3 leading-8 transition-colors duration-200 ease-in-out placeholder-[#a15999]"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="p-2 w-full mt-8">
+                                    <button className=" w-full text-center text-[#fff] bg-[#a15999] border-0 py-2 px-8 focus:outline-none hover:bg-[#a8599f] rounded text-lg">
+                                    Request reset link
+                                    </button>
+                                </div>
+                                <div className="p-2 w-full mt-8 text-center">
+                                    <Link className=" text-[#a15999] underline">
+                                    Return to Sign In
+                                    </Link>
+                                </div>
+
+                            </div>
+                           
+                            <div className=" text-[#a15999] mt-10 ">
+                                <p className=" text-center lg:my-0 my-5">Privacy Policy</p>
+                                <div className="flex justify-between items-center lg:gap-3 gap-1">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default ForgotPassword;
