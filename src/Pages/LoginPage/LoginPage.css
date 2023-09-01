@@ -1,0 +1,5 @@
+
+.custom-checkbox:checked + .checkmark {
+  background-color:  bg-blue-500; 
+  border-color:  border-blue-500; 
+}
