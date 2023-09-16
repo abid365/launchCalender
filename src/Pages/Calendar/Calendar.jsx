@@ -26,7 +26,7 @@ const Calendar = () => {
         <div className="flex justify-center">
           <button
             onClick={() => pdfDownload()}
-            className="px-6 py-3 rounded-lg bg-[#ff6081] text-white text-lg tracking-tight font-semibold"
+            className="px-6 py-3 rounded-lg bg-[#ff6081] text-white text-lg tracking-tight font-semibold hover:bg-red-400"
           >
             Download As PDF
           </button>
@@ -40,6 +40,56 @@ const Calendar = () => {
             Sign up to get a reminder email to your inbox prior to each due
             date?
           </p>
+        </div>
+        {/* reminder form */}
+        <div className="form-control text-sm">
+          <div className="grid grid-cols-2 place-items-center">
+            <div>
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="text"
+                placeholder="password"
+                className="input input-bordered"
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="text"
+                placeholder="password"
+                className="input input-bordered"
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="text"
+                placeholder="password"
+                className="input input-bordered"
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="text"
+                placeholder="password"
+                className="input input-bordered"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="form-control mt-10 flex items-center">
+          <button className="border px-7 py-2 rounded-lg w-fit bg-[#ff6081] hover:bg-red-400 text-sm text-white">
+            Send
+          </button>
         </div>
       </div>
     </div>
