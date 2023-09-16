@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="bg-[#fef9fa]">
       <Navbar />
-      <Home />
       <Outlet />
     </div>
   );
