@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CalendarContext } from "../../providers/CalendarProvider";
+
 
 const Home = () => {
+  
+  const {user,setUser}=useContext(CalendarContext)
+  console.log(user)
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    const form=e.target
+    const date=form.date.value
+    const launchType=form.launchType.value
+    const ads=form.ads.value
+    const drone=form.drone.value
+     const info={
+      date,
+      launchType,
+      ads,drone
+    }
+    setUser(info)
+    
+  }
   return (
     <div>
       {/* Upper Secton */}
@@ -14,14 +34,14 @@ const Home = () => {
 
         <div className="mt-10">
           {/* form */}
-          <form className="text-center" action="">
+          <form onSubmit={handleSubmit} className="text-center" action="">
             <label className="text-sm block" htmlFor="launchDate">
               When are you going to launch the course? * <br />
             </label>
             {/* first select menu */}
             <button className="px-3 py-2 rounded-lg border border-[#ff6081] text-xs my-3">
               Choose a date from this calendar{" "}
-              <input className="bg-transparent" type="date" />
+              <input className="bg-transparent" name="date" type="date" />
             </button>{" "}
             <br />
             {/* second select menu */}
@@ -42,6 +62,9 @@ const Home = () => {
               Are you going to run any paid ads?
               <br />
             </label>
+            <div>
+                <input type="submit" value="Submit" />
+              </div>
             {/* yes */}
             <span className="px-4 mt-4 inline-block">
               <input type="radio" name="ads" value={"yes"} />
@@ -100,6 +123,7 @@ const Home = () => {
                 <input type="radio" id="louie" name="drone" value="louie" />
                 <label for="louie">Louie</label>
               </div>
+
             </div>
           </form>
         </div>

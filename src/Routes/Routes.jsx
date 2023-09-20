@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/calendar",
-        element: <Calendar>s</Calendar>,
+        element: <Calendar></Calendar>,
       },
     ],
   },
