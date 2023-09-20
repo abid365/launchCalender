@@ -9,7 +9,7 @@ const ForgotPassword = () => {
                 <div className="container px-5 py-10  mx-auto border-2xl ">
                     <div className="lg:w-1/2 md:w-2/3 mx-auto ">
                         <div className=" border-[1px] border-[#a15999] px-10 py-10 rounded-md">
-                            <h1 className="text-center  text-base font-medium title-font mb-8  text-[#a15999]">
+                            <h1 className="text-center  text-2xl font-medium title-font mb-8  text-[#a15999]">
 
                                 Forgot your password?
                             </h1>
@@ -38,7 +38,7 @@ const ForgotPassword = () => {
                                     </button>
                                 </div>
                                 <div className="p-2 w-full mt-8 text-center">
-                                    <Link className=" text-[#a15999] underline">
+                                    <Link to="/login" className=" text-[#a15999] underline">
                                     Return to Sign In
                                     </Link>
                                 </div>

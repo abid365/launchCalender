@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
+import CardPreviewPage from "../Pages/CardPreviewPage/CardPreviewPage";
 export const router = createBrowserRouter([
     {
         path:"/",
@@ -15,5 +16,9 @@ export const router = createBrowserRouter([
     {
         path:'/forgetPassword',
         element:<ForgotPassword></ForgotPassword>
+    },
+    {
+        path:'/cardPreviewPage',
+        element:<CardPreviewPage></CardPreviewPage>
     }
 ]);

@@ -1,6 +1,7 @@
 import React from "react";
 import './LoginPage.css'
 import { FaBeer, FaFacebook, FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const LoginPage = () => {
 
   return (
@@ -52,7 +53,7 @@ const LoginPage = () => {
                         <h2 className="text-[#a15999]">Stay Sign in</h2>
                       </div>
                       <div>
-                        <h2 className="text-[#a15999]">Forget Password?</h2>
+                        <h2 className="text-[#a15999]"><Link to="/forgetPassword">Forget Password?</Link></h2>
                       </div>
                     </div>
                   </div>
