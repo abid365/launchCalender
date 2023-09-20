@@ -5,13 +5,13 @@ export const CalendarContext = createContext(null);
 const CalendarProvider = ({ children }) => {
     const [user, setUser] = useState([]);
 
-    const authInfo = {
+    const CalendarInfo = {
         user,
         setUser
     }
 
     return (
-        <CalendarContext.Provider value={authInfo}>
+        <CalendarContext.Provider value={CalendarInfo}>
             {children}
             
         </CalendarContext.Provider>
