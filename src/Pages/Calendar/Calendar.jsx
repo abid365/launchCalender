@@ -1,12 +1,16 @@
 import React from "react";
 
 const Calendar = () => {
-  const commonStyles = `border border-red-400 min-h-screen py-10 text-[#ff6081]`;
+  const commonStyles = `border border-[#a15999] min-h-screen py-10 text-[#a15999]`;
 
   // pdf downloader of calendar
   const pdfDownload = () => {
     console.log("Pdf is downloading");
   };
+
+  // getting date from local storage
+  const value = JSON.parse(localStorage.getItem("data"));
+  console.log(value.date);
 
   return (
     <div className={commonStyles}>
@@ -20,13 +24,13 @@ const Calendar = () => {
           launches + to have a stress-free course launch.
         </p>
         {/* calendar window */}
-        <div className="py-10 border-y-2 border-red-400 my-5"></div>
+        <div className="py-10 border-y-2 border-[#a15999] my-5"></div>
 
         {/* preview btn */}
         <div className="flex justify-center">
           <button
             onClick={() => pdfDownload()}
-            className="px-6 py-3 rounded-lg bg-[#ff6081] text-white text-lg tracking-tight font-semibold hover:bg-red-400"
+            className="px-6 py-3 rounded-lg bg-[#a15999] text-white text-lg tracking-tight font-semibold hover:bg-[#a15999]"
           >
             Download As PDF
           </button>
@@ -87,7 +91,7 @@ const Calendar = () => {
           </div>
         </div>
         <div className="form-control mt-10 flex items-center">
-          <button className="border px-7 py-2 rounded-lg w-fit bg-[#ff6081] hover:bg-red-400 text-sm text-white">
+          <button className="border px-7 py-2 rounded-lg w-fit bg-[#a15999] hover:bg-[#a15999] text-sm text-white">
             Send
           </button>
         </div>
