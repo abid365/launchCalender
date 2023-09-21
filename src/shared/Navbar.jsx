@@ -3,10 +3,10 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <nav className="border border-red-400 flex items-center justify-between px-7 py-4">
+      <nav className="border border-[#a15999] flex items-center justify-between px-7 py-4">
         <div>Nusrat Geek</div>
         <div>
-          <button className="border px-5 py-2 rounded-lg text-red-400 border-red-400">
+          <button className="border px-5 py-2 rounded-lg text-[#a15999] border-[#a15999]">
             Login
           </button>
         </div>
