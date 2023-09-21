@@ -20,6 +20,9 @@ const Home = () => {
     };
     // setUser(info);
     console.log(info);
+    // setting value in localstorage
+    const value = JSON.stringify(info);
+    localStorage.setItem("data", value);
   };
   return (
     <div>
