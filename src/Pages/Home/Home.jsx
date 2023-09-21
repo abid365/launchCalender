@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 
 const Home = () => {
+  // const { user, setUser } = useContext(CalendarContext);
+  // console.log(user);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const date = form.date.value;
+    const launchType = form.launchType.value;
+    const ads = form.ads.value;
+    const drone = form.drone.value;
+    const info = {
+      date,
+      launchType,
+      ads,
+      drone,
+    };
+    // setUser(info);
+    console.log(info);
+  };
   return (
     <div>
       {/* Upper Secton */}
@@ -14,15 +32,15 @@ const Home = () => {
 
         <div className="mt-10">
           {/* form */}
-          <form className="text-center" action="">
+          <form onSubmit={handleSubmit} className="text-center" action="">
             <label className="text-sm block" htmlFor="launchDate">
               When are you going to launch the course? * <br />
             </label>
             {/* first select menu */}
             <button className="px-3 py-2 rounded-lg border border-[#ff6081] text-xs my-3">
               Choose a date from this calendar{" "}
-              <input className="bg-transparent" type="date" />
-            </button>{" "}
+              <input className="bg-transparent" type="date" name="date" />
+            </button>
             <br />
             {/* second select menu */}
             <label className="text-sm mt-5 block" htmlFor="launchType">
@@ -90,16 +108,19 @@ const Home = () => {
             <div className="flex flex-col items-center border border-emerald-400 w-fit">
               <div>
                 <input type="radio" id="huey" name="drone" value="huey" />
-                <label for="huey">Huey</label>
+                <label htmlFor="huey">Huey</label>
               </div>
               <div>
                 <input type="radio" id="dewey" name="drone" value="dewey" />
-                <label for="dewey">Dewey</label>
+                <label htmlFor="dewey">Dewey</label>
               </div>
               <div>
                 <input type="radio" id="louie" name="drone" value="louie" />
-                <label for="louie">Louie</label>
+                <label htmlFor="louie">Louie</label>
               </div>
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn">Sign Up</button>
             </div>
           </form>
         </div>
