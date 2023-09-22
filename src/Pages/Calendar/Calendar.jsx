@@ -1,4 +1,5 @@
 import React from "react";
+import CalendarCountdown from "../../components/CalendarCountdown";
 
 const Calendar = () => {
   const commonStyles = `border border-[#a15999] min-h-screen py-10 text-[#a15999]`;
@@ -24,7 +25,9 @@ const Calendar = () => {
           launches + to have a stress-free course launch.
         </p>
         {/* calendar window */}
-        <div className="py-10 border-y-2 border-[#a15999] my-5"></div>
+        <div className="py-10 border-y-2 border-[#a15999] my-5">
+          <CalendarCountdown />
+        </div>
 
         {/* preview btn */}
         <div className="flex justify-center">
