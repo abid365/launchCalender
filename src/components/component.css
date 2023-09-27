@@ -6,31 +6,13 @@ h1 {
   text-align: center;
 }
 
-label {
-  font-weight: bold;
-}
-
-input[type="date"] {
-  padding: 5px;
-}
-
-button {
-  background-color: #4285f4;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #357ae8;
-}
-
 #calendar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  padding: 10px;
+  border: none;
 }
 
 #calendar {
@@ -43,7 +25,8 @@ button:hover {
 #calendar td {
   text-align: center;
   padding: 8px;
-  border: 1px solid #ccc;
+  //border: 1px solid #ccc;
+  //background-color: #fffcec;
 }
 
 #calendar th {
@@ -59,9 +42,12 @@ button:hover {
 }
 
 .date {
+  border: 1px solid white;
+  background-color: #f0fff0;
   font-size: 12px; /* Adjust the font size as needed */
-  text-align: center;
+  text-align: left;
   padding: 5px;
+  color: #0f0f0f;
 }
 
 .day-name {
@@ -72,7 +58,7 @@ button:hover {
 }
 
 .task {
-  font-size: 12px; /* Adjust the font size as needed */
-  text-align: center;
+  font-size: 10px; /* Adjust the font size as needed */
+  text-align: left;
   padding: 5px;
 }

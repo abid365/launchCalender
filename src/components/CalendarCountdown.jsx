@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import "./component.css";
 
 const CalendarCountdown = () => {
   let date = [];
@@ -14,7 +15,6 @@ const CalendarCountdown = () => {
 
     // Get the launch date from the user input
     const launchDate = new Date(launchDateInput);
-    console.log(launchDateInput);
 
     // Get the current date
     const currentDate = new Date();
@@ -74,10 +74,11 @@ const CalendarCountdown = () => {
       const taskIndex = Math.min(
         Math.max(
           0,
-          Math.floor((launchDate - new Date()) / (24 * 60 * 60 * 1000))
+          Math.floor((launchDate - currentDate) / (24 * 60 * 60 * 1000))
         ),
         tasks.length - 1
       );
+      console.log(taskIndex);
       const taskText = document.createElement("div");
       taskText.className = "task";
       taskText.textContent = tasks[taskIndex];
