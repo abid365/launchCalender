@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CalendarCountdown from "../../components/CalendarCountdown";
 
 const Calendar = () => {
@@ -8,6 +8,19 @@ const Calendar = () => {
   const pdfDownload = () => {
     console.log("Pdf is downloading");
   };
+
+  // todo: this showUi fn shows the calendar after 2sec
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    // Clear the timer when the component unmounts
+    return () => clearTimeout(timer);
+  }, []);
 
   // getting date from local storage
   const value = JSON.parse(localStorage.getItem("data"));
@@ -26,7 +39,11 @@ const Calendar = () => {
         </p>
         {/* calendar window */}
         <div className="py-10 border-y-2 border-[#a15999] my-5">
-          <CalendarCountdown />
+          {loading ? (
+            <h1 className="text-center font-bold">Loading..</h1>
+          ) : (
+            <CalendarCountdown />
+          )}
         </div>
 
         {/* preview btn */}

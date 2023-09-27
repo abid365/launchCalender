@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const CalendarCountdown = () => {
+  let date = [];
+  const dataNum = JSON.parse(localStorage.getItem("data"));
+  date.push(dataNum);
+  console.log(date);
   function renderCalendar() {
-    const launchDateInput = JSON.parse(localStorage.getItem("data"));
+    const launchDateInput = new Date(date[0].date);
+    // const v = localStorage.getItem("data");
+    // console.log(v);
     const calendarBody = document.getElementById("calendar-body");
     const monthName = document.getElementById("month-name");
 
     // Get the launch date from the user input
     const launchDate = new Date(launchDateInput);
-    console.log(launchDate);
+    console.log(launchDateInput);
 
     // Get the current date
     const currentDate = new Date();
@@ -21,6 +27,7 @@ const CalendarCountdown = () => {
       month: "long",
       year: "numeric",
     });
+    console.log(monthText);
     monthName.textContent = monthText;
 
     // Initialize an array to store the tasks
@@ -97,21 +104,9 @@ const CalendarCountdown = () => {
   }
 
   // end of renderCalendar function
-
-  // todo: this showUi fn shows the calendar after 2sec
-
-  const [loader, setLoader] = useState(true);
-
-  const showUi = () => {
-    if (loader) {
-      setTimeout(() => {
-        return <h1>Please wait..</h1>;
-      }, 2000);
-
-      setLoader(false);
-      onload(renderCalendar());
-    }
-  };
+  useEffect(() => {
+    renderCalendar();
+  }, []);
 
   return (
     <div>
