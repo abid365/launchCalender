@@ -102,6 +102,33 @@ const CalendarCountdown = () => {
     if (currentRow.children.length > 0) {
       calendarBody.appendChild(currentRow);
     }
+
+    // Automatically generate 10 more days after the launch date
+    for (let i = 0; i < 10; i++) {
+      const dayOfWeek = currentDate.getDay(); // 0 (Sun) to 6 (Sat)
+      const cell = document.createElement("td");
+      const taskContainer = document.createElement("div");
+      taskContainer.className = "task-container";
+      const dateText = document.createElement("div");
+      dateText.className = "date";
+      dateText.textContent = currentDate.getDate();
+      taskContainer.appendChild(dateText);
+      cell.appendChild(taskContainer);
+
+      // Check if it's a Sunday and move to the next row
+      if (dayOfWeek === 0) {
+        calendarBody.appendChild(currentRow);
+        currentRow = document.createElement("tr");
+      }
+
+      currentRow.appendChild(cell);
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    // Append the last row if it's not a full week
+    if (currentRow.children.length > 0) {
+      calendarBody.appendChild(currentRow);
+    }
   }
 
   // end of renderCalendar function
