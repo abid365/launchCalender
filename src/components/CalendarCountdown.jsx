@@ -43,7 +43,6 @@ const CalendarCountdown = () => {
       "Finalize course materials",
       "Launch the course",
       "Monitor course progress",
-      "Your selected launch day",
     ];
     // const tasks = demo.reverse();
 
@@ -143,10 +142,38 @@ const CalendarCountdown = () => {
       "Setup post-sale lead collection page",
     ];
 
-    //todo: getting the 10th date that comes after launch date
-    const dateOfLastTen = launchDate;
-    dateOfLastTen.setDate(dateOfLastTen.getDate() + 9);
-    console.log(dateOfLastTen.toDateString());
+    /*  //todo: getting the 10th date that comes after launch date
+    const dateOfLastTen = new Date(launchDate);
+    dateOfLastTen.setDate(dateOfLastTen.getDate() + 10);
+
+    console.log(dateOfLastTen);
+
+    // * getting the diff , 1st attempt
+
+    const date1 = launchDate;
+    const date2 = dateOfLastTen;
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    console.log(diffDays);
+
+    //* 2nd attempt
+    const taskIndexTwo = Math.min(
+      Math.max(0, Math.floor(10 / (24 * 60 * 60 * 1000))),
+      prepTasks.length - 1
+    );
+    console.log(taskIndexTwo);
+
+    //* 3rd attempt
+    let a;
+    const taskIndexPrime = () => {
+      for (let i = 0; i <= prepTasks.length - 1; i++) {
+        return (a = i);
+      }
+    }; */
+
+    /* console.log(taskIndexTwo);
+    console.log(prepTasks[9 - taskIndexTwo]); */
 
     // Automatically generate 10 more days after the launch date
     for (let i = 0; i < 10; i++) {
@@ -188,6 +215,12 @@ const CalendarCountdown = () => {
       taskContainer.appendChild(dateText);
       dateText.appendChild(dayNameText);
       dayNameText.appendChild(monthName);
+      const taskText = document.createElement("div");
+      taskText.className = "task";
+      const secondTaskIndex = Math.min(prepTasks.length - 1, i);
+      taskText.textContent = prepTasks[secondTaskIndex];
+
+      taskContainer.appendChild(taskText);
       cell.appendChild(taskContainer);
 
       // Check if it's a Sunday and move to the next row
