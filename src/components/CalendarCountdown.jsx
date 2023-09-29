@@ -78,14 +78,18 @@ const CalendarCountdown = () => {
         ),
         tasks.length - 1
       );
-      console.log(taskIndex);
+      console.log(tasks[taskIndex]);
+
+      // const revTask = tasks.reverse();
+
       const taskText = document.createElement("div");
       taskText.className = "task";
       taskText.textContent = tasks[taskIndex];
 
       taskContainer.appendChild(dateText);
-      taskContainer.appendChild(dayNameText); // Add the day name
+      // taskContainer.appendChild(dayNameText); // Add the day name
       taskContainer.appendChild(taskText);
+      dateText.appendChild(dayNameText);
       cell.appendChild(taskContainer);
 
       // Check if it's a Sunday and move to the next row

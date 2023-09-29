@@ -42,7 +42,8 @@ h1 {
 }
 
 .date {
-  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
   background-color: #f0fff0;
   font-size: 12px; /* Adjust the font size as needed */
   text-align: left;
@@ -53,7 +54,8 @@ h1 {
 .day-name {
   font-size: 12px; /* Adjust the font size as needed */
   text-align: center;
-  padding: 5px;
+  width: fit-content;
+  padding: 0px 3px;
   font-weight: bold;
 }
 
