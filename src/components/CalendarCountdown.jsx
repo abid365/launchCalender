@@ -43,6 +43,7 @@ const CalendarCountdown = () => {
       "Launch the course",
       "Monitor course progress",
     ];
+    // const tasks = demo.reverse();
 
     // Create an empty table row
     let currentRow = document.createElement("tr");
@@ -70,7 +71,7 @@ const CalendarCountdown = () => {
         "Sat",
       ][dayOfWeek];
 
-      // Calculate the task index based on the date difference
+      //todo: Calculate the task index based on the date difference
       const taskIndex = Math.min(
         Math.max(
           0,
@@ -78,13 +79,24 @@ const CalendarCountdown = () => {
         ),
         tasks.length - 1
       );
-      console.log(tasks[taskIndex]);
+
+      //* test
+      const division = 24 * 60 * 60 * 1000;
+      const test1 = Math.floor(launchDate - currentDate);
+      console.log(test1 / division);
+      console.log(tasks.length - 1);
+
+      // console.log(tasks[taskIndex]);
 
       // const revTask = tasks.reverse();
 
+      console.log(Math.max(0, 3));
+      console.log(taskIndex);
+
       const taskText = document.createElement("div");
       taskText.className = "task";
-      taskText.textContent = tasks[taskIndex];
+      taskText.textContent = tasks[9 - taskIndex];
+      // console.log(taskIndex);
 
       taskContainer.appendChild(dateText);
       // taskContainer.appendChild(dayNameText); // Add the day name

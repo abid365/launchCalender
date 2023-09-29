@@ -37,8 +37,9 @@ h1 {
 /* New styles for task text */
 .task-container {
   position: relative;
-  border: 1px solid #ccc; /* Add a border to the task container */
-  background-color: #f7f7f7; /* Add a soft background color */
+  border: 1px solid black; /* Add a border to the task container */
+  background-color: white;
+  color: black; /* Add a soft background color */
 }
 
 .date {
@@ -63,4 +64,5 @@ h1 {
   font-size: 10px; /* Adjust the font size as needed */
   text-align: left;
   padding: 5px;
+  border-top: 1px solid black;
 }
