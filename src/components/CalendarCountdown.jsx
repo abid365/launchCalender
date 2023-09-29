@@ -81,17 +81,13 @@ const CalendarCountdown = () => {
       );
 
       //* test
-      const division = 24 * 60 * 60 * 1000;
+      /*  const division = 24 * 60 * 60 * 1000;
       const test1 = Math.floor(launchDate - currentDate);
       console.log(test1 / division);
       console.log(tasks.length - 1);
 
-      // console.log(tasks[taskIndex]);
-
-      // const revTask = tasks.reverse();
-
       console.log(Math.max(0, 3));
-      console.log(taskIndex);
+      console.log(taskIndex); */
 
       const taskText = document.createElement("div");
       taskText.className = "task";
