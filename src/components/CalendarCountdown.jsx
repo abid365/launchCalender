@@ -130,6 +130,24 @@ const CalendarCountdown = () => {
       calendarBody.appendChild(currentRow);
     }
 
+    // setting up preparion for allocated 10 days
+    const prepTasks = [
+      "Send open-cart emails",
+      "Take a breath -Rest",
+      "Organize your plans",
+      "Create waitlist and thank-you pages",
+      "Write waitlist confirmation email",
+      "Automate waitlist sign-ups",
+      "Send final-hour emails before cart closes",
+      "Redirect sales page to waitlist on cart close",
+      "Setup post-sale lead collection page",
+    ];
+
+    //todo: getting the 10th date that comes after launch date
+    const dateOfLastTen = launchDate;
+    dateOfLastTen.setDate(dateOfLastTen.getDate() + 9);
+    console.log(dateOfLastTen.toDateString());
+
     // Automatically generate 10 more days after the launch date
     for (let i = 0; i < 10; i++) {
       const dayOfWeek = currentDate.getDay(); // 0 (Sun) to 6 (Sat)
