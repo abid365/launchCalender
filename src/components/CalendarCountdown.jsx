@@ -24,6 +24,7 @@ const CalendarCountdown = () => {
 
     // Display the month name above the calendar
     const monthText = launchDate.toLocaleDateString("en-US", {
+      day: "numeric",
       month: "long",
       year: "numeric",
     });
@@ -42,6 +43,7 @@ const CalendarCountdown = () => {
       "Finalize course materials",
       "Launch the course",
       "Monitor course progress",
+      "Your selected launch day",
     ];
     // const tasks = demo.reverse();
 
@@ -89,15 +91,28 @@ const CalendarCountdown = () => {
       console.log(Math.max(0, 3));
       console.log(taskIndex); */
 
+      //todo: getting the remaining days
+      const dateOne = currentDate;
+      const dateTwo = launchDate;
+      const diffTime = Math.abs(dateTwo - dateOne);
+      const diffDays = Math.ceil(diffTime / (24 * 60 * 60 * 1000));
+      const remDays = `Remaining: ${diffDays}d`;
+      console.log(remDays);
+
       const taskText = document.createElement("div");
+      const remaining = document.createElement("div");
+      remaining.className = "remaining";
       taskText.className = "task";
       taskText.textContent = tasks[9 - taskIndex];
+      remaining.textContent = remDays;
+
       // console.log(taskIndex);
 
       taskContainer.appendChild(dateText);
       // taskContainer.appendChild(dayNameText); // Add the day name
       taskContainer.appendChild(taskText);
       dateText.appendChild(dayNameText);
+      taskText.appendChild(remaining);
       cell.appendChild(taskContainer);
 
       // Check if it's a Sunday and move to the next row
@@ -124,7 +139,37 @@ const CalendarCountdown = () => {
       const dateText = document.createElement("div");
       dateText.className = "date";
       dateText.textContent = currentDate.getDate();
+      const dayNameText = document.createElement("div");
+      dayNameText.className = "day-name";
+      dayNameText.textContent = [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+      ][dayOfWeek];
+      const monthName = document.createElement("div");
+      monthName.className = "monthName";
+      const monthNames = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      monthName.textContent = monthNames[currentDate.getMonth()];
       taskContainer.appendChild(dateText);
+      dateText.appendChild(dayNameText);
+      dayNameText.appendChild(monthName);
       cell.appendChild(taskContainer);
 
       // Check if it's a Sunday and move to the next row

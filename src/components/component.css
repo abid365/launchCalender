@@ -38,8 +38,9 @@ h1 {
 .task-container {
   position: relative;
   border: 1px solid black; /* Add a border to the task container */
-  background-color: white;
-  color: black; /* Add a soft background color */
+  background-color: black;
+  padding-x: 4px;
+  color: white; /* Add a soft background color */
 }
 
 .date {
@@ -58,6 +59,23 @@ h1 {
   width: fit-content;
   padding: 0px 3px;
   font-weight: bold;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.remaining {
+  font-size: 9px;
+  padding: 5px 0px;
+  font-weight: font-semibold;
+  color: #77dd77;
+}
+
+.monthName {
+  font-size: 8px;
+  padding-x: 2px;
+  margin-left: 3px;
 }
 
 .task {
@@ -65,4 +83,5 @@ h1 {
   text-align: left;
   padding: 5px;
   border-top: 1px solid black;
+  font-weight: bold;
 }
