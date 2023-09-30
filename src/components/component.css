@@ -31,13 +31,13 @@ h1 {
 #calendar th {
   background-color: #f2f2f2;
   font-weight: bold;
-  border: 1px solid red;
 }
 
 /* New styles for task text */
 .task-container {
   position: relative;
-  border: 1px solid black; /* Add a border to the task container */
+  border: 1px solid black;
+  /* Add a border to the task container */
   background-color: #16161d;
   padding-x: 4px;
   height: 100px;
