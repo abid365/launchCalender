@@ -109,6 +109,11 @@ const CalendarCountdown = () => {
 
       taskContainer.appendChild(dateText);
       // taskContainer.appendChild(dayNameText); // Add the day name
+      // creating Pre launch label
+      const preLaunch = document.createElement("div");
+      preLaunch.className = "prelaunch-days";
+      preLaunch.textContent = `Pre-launch Day: ${tasks.length + 1 - diffDays}`;
+      taskContainer.appendChild(preLaunch);
       taskContainer.appendChild(taskText);
       dateText.appendChild(dayNameText);
       taskText.appendChild(remaining);
@@ -222,12 +227,12 @@ const CalendarCountdown = () => {
       taskText.textContent = prepTasks[secondTaskIndex];
       const remDays = Math.min(prepTasks.length - 1, i);
       const remaining = document.createElement("div");
-      remaining.className = "remaining phaseTwo";
+      remaining.className = "remaining cartDays";
       remaining.textContent = `Remaing: ${10 - remDays}d`;
-      const phaseTwo = document.createElement("div");
-      phaseTwo.className = "secondPhase";
-      phaseTwo.textContent = `Cart Day: ${remDays + 1}`;
-      taskContainer.appendChild(phaseTwo);
+      const cartDays = document.createElement("div");
+      cartDays.className = "cart-day";
+      cartDays.textContent = `Cart Day: ${remDays + 1}`;
+      taskContainer.appendChild(cartDays);
       taskText.appendChild(remaining);
 
       taskContainer.appendChild(taskText);
