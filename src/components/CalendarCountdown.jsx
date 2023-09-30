@@ -132,14 +132,14 @@ const CalendarCountdown = () => {
     // setting up preparion for allocated 10 days
     const prepTasks = [
       "Send open-cart emails",
-      "Have some rest 😴",
-      "Be prepare for the next day 🧸",
+      "Have some rest 👋🏻",
+      "Be prepare for the next day ✨",
       "Create waitlist page",
       "Create waitlist thank you page",
       "Write waitlist confirmation email",
       "Connect the tech pieces together",
       "Schedule cart close emails",
-      "",
+      "At ease , relax 🧘🏻‍♀️",
       "Redirect sales page to waitlist page",
     ];
 
@@ -220,6 +220,15 @@ const CalendarCountdown = () => {
       taskText.className = "task";
       const secondTaskIndex = Math.min(prepTasks.length - 1, i);
       taskText.textContent = prepTasks[secondTaskIndex];
+      const remDays = Math.min(prepTasks.length - 1, i);
+      const remaining = document.createElement("div");
+      remaining.className = "remaining phaseTwo";
+      remaining.textContent = `Remaing: ${10 - remDays}d`;
+      // const phaseTwo = document.createElement("div");
+      // phaseTwo.className = "secondPhase";
+      // phaseTwo.textContent = "Phase Two";
+      // remaining.appendChild(phaseTwo);
+      taskText.appendChild(remaining);
 
       taskContainer.appendChild(taskText);
       cell.appendChild(taskContainer);

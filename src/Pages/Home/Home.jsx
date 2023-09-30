@@ -1,10 +1,11 @@
 import { info } from "autoprefixer";
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Home = () => {
   // const { user, setUser } = useContext(CalendarContext);
   // console.log(user);
+  const [btnEnable, setEnable] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -23,6 +24,9 @@ const Home = () => {
     // setting value in localstorage
     const value = JSON.stringify(info);
     localStorage.setItem("data", value);
+    if (info.date) {
+      setEnable(true);
+    }
   };
   return (
     <div>
@@ -44,7 +48,12 @@ const Home = () => {
             {/* first select menu */}
             <button className="px-3 py-2 rounded-lg border border-[#a15999] text-xs my-3">
               Choose a date from this calendar{" "}
-              <input className="bg-transparent" type="date" name="date" />
+              <input
+                className="bg-transparent"
+                type="date"
+                name="date"
+                required
+              />
             </button>
             <br />
             {/* second select menu */}
@@ -135,8 +144,11 @@ const Home = () => {
                   </button>
                 )}
               </Link> */}
-              <button className="w-fit text-white px-5 py-2 rounded-md text-sm font-semibold tracking-tight bg-[#a15999] hover:bg-[#ff3266]">
-                Submit
+              <button
+                className="w-fit text-white px-5 py-2 rounded-md text-sm font-semibold tracking-tight bg-[#a15999] hover:bg-[#ff3266]"
+                disabled={!btnEnable}
+              >
+                <Link to="/calendar">Submit</Link>
               </button>
             </div>
           </form>
