@@ -5,7 +5,7 @@ const CalendarCountdown = () => {
   let date = [];
   const dataNum = JSON.parse(localStorage.getItem("data"));
   date.push(dataNum);
-  console.log(date);
+  // console.log(date);
   function renderCalendar() {
     const launchDateInput = new Date(date[0].date);
     // const v = localStorage.getItem("data");
@@ -96,7 +96,7 @@ const CalendarCountdown = () => {
       const diffTime = Math.abs(dateTwo - dateOne);
       const diffDays = Math.ceil(diffTime / (24 * 60 * 60 * 1000));
       const remDays = `Remaining: ${diffDays}d`;
-      console.log(remDays);
+      // console.log(remDays);
 
       const taskText = document.createElement("div");
       const remaining = document.createElement("div");
