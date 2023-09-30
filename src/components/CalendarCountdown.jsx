@@ -132,14 +132,15 @@ const CalendarCountdown = () => {
     // setting up preparion for allocated 10 days
     const prepTasks = [
       "Send open-cart emails",
-      "Take a breath -Rest",
-      "Organize your plans",
-      "Create waitlist and thank-you pages",
+      "Have some rest 😴",
+      "Be prepare for the next day 🧸",
+      "Create waitlist page",
+      "Create waitlist thank you page",
       "Write waitlist confirmation email",
-      "Automate waitlist sign-ups",
-      "Send final-hour emails before cart closes",
-      "Redirect sales page to waitlist on cart close",
-      "Setup post-sale lead collection page",
+      "Connect the tech pieces together",
+      "Schedule cart close emails",
+      "",
+      "Redirect sales page to waitlist page",
     ];
 
     /*  //todo: getting the 10th date that comes after launch date

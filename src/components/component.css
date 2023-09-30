@@ -12,7 +12,6 @@ h1 {
   align-items: center;
   margin-top: 20px;
   padding: 10px;
-  border: none;
 }
 
 #calendar {
@@ -32,6 +31,7 @@ h1 {
 #calendar th {
   background-color: #f2f2f2;
   font-weight: bold;
+  border: 1px solid red;
 }
 
 /* New styles for task text */
@@ -40,6 +40,7 @@ h1 {
   border: 1px solid black; /* Add a border to the task container */
   background-color: #0f0f0f;
   padding-x: 4px;
+  height: 100px;
   color: white; /* Add a soft background color */
 }
 
