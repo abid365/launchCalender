@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CalendarCountdown from "../../components/CalendarCountdown";
+import generatePDF from "react-to-pdf";
 
 const Calendar = () => {
   const commonStyles = `border border-[#a15999] min-h-screen py-10 text-[#a15999]`;
-
-  // pdf downloader of calendar
-  const pdfDownload = () => {
-    console.log("Pdf is downloading");
-  };
-
-  // todo: this showUi fn shows the calendar after 2sec
 
   const [loading, setLoading] = useState(true);
 
@@ -24,7 +18,12 @@ const Calendar = () => {
 
   // getting date from local storage
   const value = JSON.parse(localStorage.getItem("data"));
-  console.log(value.date);
+
+  // pdf download mechanism
+  const targetRef = useRef();
+  const pdfDownload = () => {
+    generatePDF(targetRef, { filename: "launchCalendar.pdf" });
+  };
 
   return (
     <div className={commonStyles}>
@@ -38,7 +37,7 @@ const Calendar = () => {
           launches + to have a stress-free course launch.
         </p>
         {/* calendar window */}
-        <div className="py-10 border-y-2 border-[#a15999] my-5">
+        <div ref={targetRef} className="py-10 border-y-2 border-[#a15999] my-5">
           {loading ? (
             <h1 className="text-center font-bold">Loading..</h1>
           ) : (

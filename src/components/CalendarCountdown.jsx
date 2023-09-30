@@ -154,8 +154,6 @@ const CalendarCountdown = () => {
 
     console.log(dateOfLastTen);
 
-    // * getting the diff , 1st attempt
-
     const date1 = launchDate;
     const date2 = dateOfLastTen;
     const diffTime = Math.abs(date2 - date1);
@@ -231,7 +229,7 @@ const CalendarCountdown = () => {
       remaining.textContent = `Remaing: ${10 - remDays}d`;
       const cartDays = document.createElement("div");
       cartDays.className = "cart-day";
-      cartDays.textContent = `Cart Day: ${remDays + 1}`;
+      cartDays.textContent = `Cart Day ${remDays + 1}`;
       taskContainer.appendChild(cartDays);
       taskText.appendChild(remaining);
 
