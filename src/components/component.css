@@ -38,7 +38,7 @@ h1 {
 .task-container {
   position: relative;
   border: 1px solid black; /* Add a border to the task container */
-  background-color: #0f0f0f;
+  background-color: #16161d;
   padding-x: 4px;
   height: 100px;
   color: white; /* Add a soft background color */
