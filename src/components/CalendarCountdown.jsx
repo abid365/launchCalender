@@ -224,10 +224,10 @@ const CalendarCountdown = () => {
       const remaining = document.createElement("div");
       remaining.className = "remaining phaseTwo";
       remaining.textContent = `Remaing: ${10 - remDays}d`;
-      // const phaseTwo = document.createElement("div");
-      // phaseTwo.className = "secondPhase";
-      // phaseTwo.textContent = "Phase Two";
-      // remaining.appendChild(phaseTwo);
+      const phaseTwo = document.createElement("div");
+      phaseTwo.className = "secondPhase";
+      phaseTwo.textContent = `Cart Day: ${remDays + 1}`;
+      taskContainer.appendChild(phaseTwo);
       taskText.appendChild(remaining);
 
       taskContainer.appendChild(taskText);

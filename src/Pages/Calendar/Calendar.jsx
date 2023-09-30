@@ -67,44 +67,44 @@ const Calendar = () => {
         </div>
         {/* reminder form */}
         <div className="form-control text-sm">
-          <div className="grid grid-cols-2 place-items-center">
+          <div className="grid grid-cols-2 place-items-center font-bold">
             <div>
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-[#a15999]">First Name</span>
               </label>
               <input
                 type="text"
-                placeholder="password"
+                placeholder="Your First Name"
                 className="input input-bordered"
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-[#a15999]">Last Name</span>
               </label>
               <input
                 type="text"
-                placeholder="password"
+                placeholder="Your Last Name"
                 className="input input-bordered"
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-[#a15999]">Title</span>
               </label>
               <input
                 type="text"
-                placeholder="password"
+                placeholder="Title"
                 className="input input-bordered"
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-[#a15999]">Email</span>
               </label>
               <input
                 type="text"
-                placeholder="password"
+                placeholder="Your Email"
                 className="input input-bordered"
               />
             </div>

@@ -40,7 +40,7 @@ h1 {
   /* Add a border to the task container */
   background-color: #16161d;
   padding-x: 4px;
-  height: 100px;
+  height: 110px;
   color: white; /* Add a soft background color */
 }
 
@@ -78,11 +78,13 @@ h1 {
 }
 
 .secondPhase {
-  padding: 2px 0px;
+  padding: 3px 0px;
   font-weight: semi-bold;
   margin-bottom: 1px;
-  font-size: 8px;
-  color: #eaf4fc;
+  font-size: 9px;
+  border-top: 1px solid black;
+  color: black;
+  background-color: white;
 }
 
 .monthName {
